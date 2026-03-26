@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산림공사 | 산림기술용역 전문 기업</title>
+<meta name="description" content="산림공사는 산림조사·복구설계·복구감리·재선충방제·재해위험성검토 전문 산림기술용역 기업입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #fafaf8;
+    --accent: #2E6B3E;
+    --accent-dark: #1d4a2a;
+    --accent-light: #e8f2ec;
+    --gray-light: #f2f0eb;
+    --gray-mid: #8a8880;
+    --text: #1e1e1c;
+    --serif: 'Playfair Display', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,248,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s;
+  }
+
+  .nav-logo {
+    font-family: var(--sans);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray-mid);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* CONV-05: Removed !important by using a dedicated .nav-cta selector with higher specificity */
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--accent-dark); color: var(--white); }
+
+  /* UX-05: Always-visible mobile CTA in nav */
+  .nav-mobile-cta {
+    display: none;
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.5rem 1.1rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-mobile-cta:hover { background: var(--accent-dark); color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 4rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black);
+    margin-bottom: 1.8rem;
+    word-break: keep-all;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--gray-mid);
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    word-break: keep-all;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.9rem 2.2rem;
+    border: none;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.25s, transform 0.2s;
+    border-radius: 2px;
+    font-family: var(--sans);
+    font-weight: 500;
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+  .btn-secondary {
+    color: var(--gray-mid);
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text); }
+  .btn-secondary .arrow { transition: transform 0.2s; }
+  .btn-secondary:hover .arrow { transform: translateX(4px); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--gray-light);
+  }
+
+  .hero-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-img-fallback {
+    width: 100%; height: 100%;
+    background: linear-gradient(155deg, #2e6b3e22 0%, #1d4a2a44 50%, #0d2d1a66 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 3rem; left: -2rem;
+    background: var(--white);
+    padding: 1.2rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    max-width: 230px;
+  }
+
+  .hero-badge-num {
+    font-family: var(--sans);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-badge-label {
+    font-size: 0.75rem;
+    color: var(--gray-mid);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    background: var(--black);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-item {
+    padding: 2rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--sans);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 7rem 4rem; }
+
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--sans);
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--white); }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .services-desc {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--gray-mid);
+    font-weight: 300;
+    word-break: keep-all;
+  }
+
+  /* UX-02: 5-card grid — last-row 2 cards centered.
+     Strategy: use a 6-column internal grid so cards span 2 cols each.
+     Cards 1-3 span 2 cols each (fills 6 cols). Cards 4-5 each span 2 cols
+     starting at cols 2 and 4, centering them in the 6-col row. */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+  }
+
+  .services-grid .service-card {
+    grid-column: span 2;
+  }
+
+  /* Last 2 cards: start at col 2 and col 4 respectively to center in 6-col row */
+  .services-grid .service-card:nth-child(4) { grid-column: 2 / span 2; }
+  .services-grid .service-card:nth-child(5) { grid-column: 4 / span 2; }
+
+  .service-card {
+    background: var(--gray-light);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.4s;
+  }
+
+  .service-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(46,107,62,0.10); }
+  .service-card:hover::after { width: 100%; }
+
+  .service-icon {
+    width: 44px; height: 44px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+  }
+
+  .service-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--gray-mid);
+    font-weight: 300;
+    word-break: keep-all;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--gray-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-image {
+    aspect-ratio: 4/5;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-image-fallback {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #2e6b3e33 0%, #1d4a2a55 100%);
+    position: absolute;
+    inset: 0;
+  }
+
+  .about-image-label {
+    position: absolute;
+    bottom: 1.5rem; right: 1.5rem;
+    background: var(--white);
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--gray-mid);
+    text-transform: uppercase;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--gray-mid);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    word-break: keep-all;
+  }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .value-item {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+  }
+
+  .value-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.3rem;
+  }
+
+  .value-desc {
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    line-height: 1.6;
+    font-weight: 300;
+    word-break: keep-all;
+  }
+
+  /* ── ACHIEVEMENTS (실적) ── */
+  .achievements { background: var(--white); }
+
+  .achievements-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    border: 1px solid rgba(0,0,0,0.07);
+    padding: 2rem;
+    border-radius: 2px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+
+  .achievement-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(46,107,62,0.08);
+  }
+
+  .achievement-year {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+
+  .achievement-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .achievement-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1px;
+    letter-spacing: 0.04em;
+  }
+
+  .achievements-more {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    padding: 0.85rem 2.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--accent); color: var(--white); }
+
+  /* ── SNS SECTION ── */
+  .sns-section {
+    background: #f5f5f5;
+    padding: 7rem 4rem;
+  }
+
+  .sns-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+  }
+
+  .sns-header .section-tag {
+    justify-content: center;
+  }
+
+  .sns-header .section-tag::before { display: none; }
+
+  .sns-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .sns-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .sns-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+
+  .sns-card-header {
+    padding: 1.4rem 1.4rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .sns-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .sns-icon.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+  .sns-icon.youtube { background: #ff0000; color: white; }
+  .sns-icon.blog { background: #03C75A; color: white; }
+  .sns-icon.kakao { background: #FEE500; color: #3c1e1e; }
+
+  .sns-card-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .sns-card-handle {
+    font-size: 0.72rem;
+    color: var(--gray-mid);
+    margin-top: 0.1rem;
+  }
+
+  .sns-thumbs {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .sns-thumb {
+    aspect-ratio: 1;
+    background: var(--gray-light);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .sns-thumb::after {
+    content: '보기';
+    position: absolute;
+    inset: 0;
+    background: rgba(46,107,62,0.75);
+    color: white;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .sns-thumb:hover::after,
+  /* A11Y-05: Show overlay on keyboard focus so keyboard users can activate the link */
+  .sns-thumb:focus-within::after,
+  .sns-thumb:focus::after { opacity: 1; }
+
+  .sns-thumb-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #e0ebe3 0%, #c8dccb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0.5;
+  }
+
+  .sns-posts-list {
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .sns-post-item {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    line-height: 1.5;
+    word-break: keep-all;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .sns-post-item:last-child { border-bottom: none; }
+  .sns-post-item:hover { color: var(--accent); }
+
+  .sns-post-date {
+    font-size: 0.68rem;
+    color: #bbb;
+    margin-top: 0.2rem;
+  }
+
+  .sns-kakao-body {
+    padding: 1rem 1.4rem;
+    font-size: 0.83rem;
+    color: var(--gray-mid);
+    line-height: 1.7;
+    word-break: keep-all;
+    font-weight: 300;
+  }
+
+  .sns-card-footer {
+    padding: 0.75rem 1.4rem 1.4rem;
+  }
+
+  .sns-follow-btn {
+    display: block;
+    text-align: center;
+    padding: 0.65rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+
+  .sns-follow-btn:hover { opacity: 0.85; }
+  .sns-follow-btn.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
+  .sns-follow-btn.youtube { background: #ff0000; color: white; }
+  .sns-follow-btn.blog { background: #03C75A; color: white; }
+  .sns-follow-btn.kakao { background: #FEE500; color: #3c1e1e; }
+
+  .sns-preparing {
+    padding: 2.5rem 1.4rem;
+    text-align: center;
+    color: var(--gray-mid);
+    font-size: 0.8rem;
+  }
+
+  .badge-preparing {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #999;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact .section-title { color: var(--white); }
+  .contact .section-tag { color: var(--accent); }
+  .contact .section-tag::before { background: var(--accent); }
+
+  .contact-desc {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    /* A11Y-10: Raised from 0.4 to 0.7 opacity to pass WCAG AA contrast on dark background */
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-top: 1rem;
+    word-break: keep-all;
+  }
+
+  .contact-info { margin-top: 2.5rem; }
+
+  .contact-info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .contact-info-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 60px;
+    padding-top: 0.1rem;
+  }
+
+  .contact-info-value {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .form-input, .form-textarea, .form-select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    font-family: var(--sans);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 2px;
+  }
+
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--accent);
+  }
+
+  .form-select option { background: #1a1a1a; color: var(--white); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: background 0.25s, transform 0.2s;
+    align-self: flex-start;
+    border-radius: 2px;
+  }
+
+  .form-submit:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: var(--sans);
+    color: var(--white);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-info {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.03em;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── FLOATING WIDGET (UX-01: consolidated, moved to bottom-right) ── */
+  .widget-wrap {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .widget-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* UX-01: align right so panel sits flush with the right-side button */
+    align-items: flex-end;
+    transition: all 0.3s ease;
+  }
+
+  .widget-channels.hidden .channel-item {
+    opacity: 0;
+    /* Panel is above button — items animate downward (toward button) when hiding */
+    transform: translateY(16px) scale(0.85);
+    pointer-events: none;
+  }
+
+  .channel-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border-radius: 40px;
+    padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.25s;
+    cursor: pointer;
+  }
+
+  .channel-item:hover { transform: translateX(-4px); box-shadow: 0 6px 28px rgba(0,0,0,0.18); }
+
+  .channel-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .channel-icon.kakao { background: #FEE500; }
+  .channel-icon.phone { background: var(--accent); color: white; }
+  .channel-icon.email { background: #6c757d; color: white; }
+
+  .channel-label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* nth-child animation delay */
+  .channel-item:nth-child(1) { transition-delay: 0.05s; }
+  .channel-item:nth-child(2) { transition-delay: 0.03s; }
+  .channel-item:nth-child(3) { transition-delay: 0.01s; }
+
+  .widget-channels:not(.hidden) .channel-item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .widget-btn {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 20px rgba(46,107,62,0.45);
+    transition: transform 0.25s, background 0.25s;
+    position: relative;
+    animation: bounceIn 0.6s 0.5s ease both;
+  }
+
+  .widget-btn:hover { transform: scale(1.08); background: var(--accent-dark); }
+  .widget-btn.open { background: var(--accent-dark); }
+
+  .widget-badge {
+    position: absolute;
+    top: -3px; right: -3px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #4CAF50;
+    border: 2px solid white;
+  }
+
+  .widget-badge.offline { background: #999; }
+
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.4); }
+    60% { transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-desc { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    /* UX-05: Show the mobile-only CTA button when nav-links collapse */
+    .nav-mobile-cta { display: inline-block; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 55vw; }
+    .hero-left { padding: 3rem 1.5rem; }
+    /* UX-03: Prevent badge clipping at 540px–900px range */
+    .hero-badge { left: 1rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .services-header { grid-template-columns: 1fr; gap: 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .services-grid .service-card { grid-column: auto; }
+    .services-grid .service-card:nth-child(4),
+    .services-grid .service-card:nth-child(5) { grid-column: auto; }
+    .about { grid-template-columns: 1fr; gap: 2rem; }
+    .achievements-header { grid-template-columns: 1fr; gap: 1rem; }
+    .achievements-grid { grid-template-columns: 1fr; }
+    .sns-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact { grid-template-columns: 1fr; gap: 3rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-info { text-align: center; }
+    .widget-btn { width: 48px; height: 48px; font-size: 1.1rem; }
+    .sns-section { padding: 4rem 1.5rem; }
+  }
+
+  @media (max-width: 540px) {
+    .sns-grid { grid-template-columns: 1fr; }
+    .hero-badge { left: 1rem; }
+  }
+
+  /* ── REDUCED MOTION ── */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow, .hero-title, .hero-desc, .hero-actions {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .widget-btn {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* UX-04: Form success banner */
+  .form-success {
+    display: none;
+    background: rgba(46,107,62,0.15);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 1rem 1.2rem;
+    font-size: 0.88rem;
+    color: var(--white);
+    line-height: 1.7;
+  }
+
+  .form-success.visible { display: block; }
+
+  /* UX-04: Form error inline message */
+  .form-error-msg {
+    font-size: 0.75rem;
+    color: #f87171;
+    margin-top: 0.2rem;
+    display: none;
+  }
+
+  .form-error-msg.visible { display: block; }
+
+  .form-input.error, .form-textarea.error, .form-select.error {
+    border-color: #f87171;
+  }
+
+  /* UX-04: Submit button loading state */
+  .form-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="#">산림공사</a>
+  <ul class="nav-links">
+    <li><a href="#services">업무소개</a></li>
+    <li><a href="#about">회사소개</a></li>
+    <li><a href="#achievements">주요실적</a></li>
+    <li><a href="#contact" class="nav-cta">온라인문의</a></li>
+  </ul>
+  <!-- UX-05: Mobile-only CTA — always visible when nav-links are hidden -->
+  <a href="#contact" class="nav-mobile-cta" aria-label="온라인 문의하기">온라인문의</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">산림기술용역 전문 기업</p>
+    <h1 class="hero-title">
+      산림을 지키는<br><em>전문가</em>의 손길
+    </h1>
+    <p class="hero-desc">
+      산림공사는 산림조사·복구설계·복구감리·재선충방제·재해위험성검토 5개 핵심 업무를 수행하는 국가공인 산림기술용역 전문 기업입니다. 신뢰와 현장 경험으로 고객의 소중한 산림을 지킵니다.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">서비스 알아보기</a>
+      <a href="#contact" class="btn-secondary">문의하기 <span class="arrow">→</span></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img" src="images/forest_1.jpg" alt="산림 현장 전문가" width="960" height="1080" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="hero-img-fallback" style="display:none; width:100%; height:100%; background:linear-gradient(155deg,#2e6b3e22 0%,#1d4a2a44 50%,#0d2d1a66 100%);"></div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-num">2005</div>
+    <div class="stat-label">설립연도</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">500+</div>
+    <div class="stat-label">누적 프로젝트</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">200+</div>
+    <div class="stat-label">협력 고객사</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">15+</div>
+    <div class="stat-label">전문 기술자</div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-tag">업무소개</p>
+      <h2 class="section-title">5개 핵심 업무로<br>산림을 지킵니다</h2>
+    </div>
+    <p class="services-desc">
+      국가공인 산림기술사와 전문 인력이 산림조사부터 재해위험성검토까지 전 과정을 책임집니다. 개인 토지주부터 공공기관까지, 규모에 관계없이 최고의 기술 서비스를 제공합니다.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌲</div>
+      <h3 class="service-title">산림조사</h3>
+      <p class="service-desc">산지전용허가를 위한 산림조사서 작성 및 현장 조사. 토지 소유자의 인허가 절차를 신속하고 정확하게 지원합니다.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📐</div>
+      <h3 class="service-title">복구설계</h3>
+      <p class="service-desc">훼손된 산림의 복구계획 수립 및 설계. 법적 기준에 부합하는 최적의 복구 방안을 제안합니다.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3 class="service-title">복구감리</h3>
+      <p class="service-desc">산림 복구공사의 현장 감리 및 준공 검사. 설계 대로 시공이 이루어지는지 전문가가 철저히 확인합니다.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3 class="service-title">재선충방제계획</h3>
+      <p class="service-desc">소나무재선충병 방제계획 수립 및 방제 지원. 산림 생태계 보호를 위한 체계적인 방제 전략을 제공합니다.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚠️</div>
+      <h3 class="service-title">재해위험성검토</h3>
+      <p class="service-desc">개발사업 인허가 시 필요한 재해위험성 검토. 산사태·토석류 등 자연재해 위험을 사전에 분석하고 대책을 제시합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-image">
+    <img src="images/forest_2.jpg" alt="산림공사 현장" width="800" height="1000" loading="lazy" onerror="this.style.display='none';">
+    <div class="about-image-fallback"></div>
+    <span class="about-image-label">Our Story</span>
+  </div>
+  <div class="about-content">
+    <p class="section-tag">회사소개</p>
+    <h2 class="section-title">신뢰와 전문성으로<br>함께 성장합니다</h2>
+    <p>산림공사는 산림기술용역 전문 기업으로, 수십 년간 전국 각지의 산림 현장에서 쌓아온 경험과 기술력을 바탕으로 고객에게 최고의 서비스를 제공합니다.</p>
+    <p>개인 토지주의 작은 산지 허가부터 공공기관의 대규모 산림사업까지, 국가공인 자격을 갖춘 전문 기술자들이 모든 프로젝트에 책임감을 가지고 임합니다.</p>
+    <div class="about-values">
+      <div class="value-item">
+        <div class="value-title">전문성</div>
+        <div class="value-desc">국가공인 산림기술사·기술자 보유</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">신뢰</div>
+        <div class="value-desc">검증된 실적과 투명한 소통</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">현장경험</div>
+        <div class="value-desc">전국 현장에서 쌓은 풍부한 노하우</div>
+      </div>
+      <div class="value-item">
+        <div class="value-title">책임감</div>
+        <div class="value-desc">착수부터 납품까지 끝까지 책임</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACHIEVEMENTS ── -->
+<section class="achievements" id="achievements">
+  <div class="achievements-header">
+    <div>
+      <p class="section-tag">주요실적</p>
+      <h2 class="section-title">검증된 실적이<br>신뢰를 말합니다</h2>
+    </div>
+    <p class="services-desc">
+      전국 각지에서 수행한 산림기술용역 실적입니다. 공공기관, 건설사, 개인 토지주 등 다양한 고객과 함께한 500여 건의 프로젝트가 산림공사의 역량을 증명합니다.
+    </p>
+  </div>
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <div class="achievement-year">2024</div>
+      <div class="achievement-title">경기도 광주시 일원 소나무재선충병 방제계획 수립 용역</div>
+      <span class="achievement-tag">재선충방제</span>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-year">2024</div>
+      <div class="achievement-title">남양주시 산림복구 설계 및 감리 용역</div>
+      <span class="achievement-tag">복구설계·감리</span>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-year">2023</div>
+      <div class="achievement-title">이천시 산지개발 재해위험성 검토 보고서</div>
+      <span class="achievement-tag">재해위험성</span>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-year">2023</div>
+      <div class="achievement-title">용인시 산지전용 산림조사서 작성 용역</div>
+      <span class="achievement-tag">산림조사</span>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-year">2022</div>
+      <div class="achievement-title">가평군 산림복구 설계 및 준공감리</div>
+      <span class="achievement-tag">복구설계·감리</span>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-year">2022</div>
+      <div class="achievement-title">양평군 택지개발사업 재해위험성 검토</div>
+      <span class="achievement-tag">재해위험성</span>
+    </div>
+  </div>
+  <div class="achievements-more">
+    <a href="#contact" class="btn-outline">실적 목록 전체 보기 →</a>
+  </div>
+</section>
+
+<!-- ── SNS SECTION (F-12) ── -->
+<section class="sns-section" id="sns">
+  <div class="sns-header">
+    <p class="section-tag">소통채널</p>
+    <h2 class="section-title">산림공사 SNS 채널</h2>
+    <p style="font-size:0.9rem;color:var(--gray-mid);margin-top:0.75rem;font-weight:300;">SNS를 통해 최신 산림 정보와 현장 소식을 확인하세요.</p>
+  </div>
+  <div class="sns-grid">
+
+    <!-- 인스타그램 -->
+    <div class="sns-card">
+      <div class="sns-card-header">
+        <div class="sns-icon instagram">📷</div>
+        <div>
+          <div class="sns-card-name">인스타그램</div>
+          <div class="sns-card-handle">@sanlimgongsa</div>
+        </div>
+      </div>
+      <!-- A11Y-05: tabindex="0" added so keyboard users can focus and see the overlay -->
+      <div class="sns-thumbs">
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🌲</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🌿</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🏔️</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🌳</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🍃</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="인스타그램 게시물 보기"><div class="sns-thumb-placeholder">🌲</div></div>
+      </div>
+      <div class="sns-card-footer">
+        <a href="#" class="sns-follow-btn instagram">팔로우하기</a>
+      </div>
+    </div>
+
+    <!-- 유튜브 -->
+    <div class="sns-card">
+      <div class="sns-card-header">
+        <div class="sns-icon youtube">▶</div>
+        <div>
+          <div class="sns-card-name">유튜브</div>
+          <div class="sns-card-handle">산림공사</div>
+        </div>
+      </div>
+      <div class="sns-thumbs" style="grid-template-columns: 1fr;">
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="유튜브 영상 보기" style="aspect-ratio:16/9;"><div class="sns-thumb-placeholder" style="aspect-ratio:16/9;">🎬</div></div>
+        <div class="sns-thumb" tabindex="0" role="img" aria-label="유튜브 영상 보기" style="aspect-ratio:16/9;"><div class="sns-thumb-placeholder" style="aspect-ratio:16/9;">🎬</div></div>
+      </div>
+      <div class="sns-card-footer">
+        <a href="#" class="sns-follow-btn youtube">구독하기</a>
+      </div>
+    </div>
+
+    <!-- 네이버 블로그 -->
+    <div class="sns-card">
+      <div class="sns-card-header">
+        <div class="sns-icon blog" style="font-weight:700;font-size:0.9rem;">N</div>
+        <div>
+          <div class="sns-card-name">네이버 블로그</div>
+          <div class="sns-card-handle">산림공사 공식 블로그</div>
+        </div>
+      </div>
+      <div class="sns-posts-list">
+        <div class="sns-post-item">
+          소나무재선충병 방제, 어떻게 진행되나요?
+          <div class="sns-post-date">2025.03.10</div>
+        </div>
+        <div class="sns-post-item">
+          산지전용허가 절차 완벽 가이드
+          <div class="sns-post-date">2025.02.24</div>
+        </div>
+        <div class="sns-post-item">
+          재해위험성검토 필요한 경우는?
+          <div class="sns-post-date">2025.02.11</div>
+        </div>
+      </div>
+      <div class="sns-card-footer">
+        <a href="#" class="sns-follow-btn blog">블로그 보기</a>
+      </div>
+    </div>
+
+    <!-- 카카오채널 -->
+    <div class="sns-card">
+      <div class="sns-card-header">
+        <div class="sns-icon kakao">💬</div>
+        <div>
+          <div class="sns-card-name">카카오채널</div>
+          <div class="sns-card-handle">산림공사</div>
+        </div>
+      </div>
+      <div class="sns-kakao-body">
+        카카오톡 채널을 추가하시면 산림기술 전문가와 실시간으로 상담하실 수 있습니다. 빠른 견적 문의 및 업무 상담을 카카오톡으로 편리하게 이용해보세요.
+      </div>
+      <div class="sns-card-footer">
+        <a href="https://pf.kakao.com/_xoXXXX" target="_blank" rel="noopener noreferrer" class="sns-follow-btn kakao">채널 추가하기</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div>
+    <p class="section-tag">온라인 문의</p>
+    <h2 class="section-title">지금 바로<br>문의하세요</h2>
+    <p class="contact-desc">
+      산지전용허가, 산림복구, 재해위험성검토 등 무엇이든 편하게 연락주세요. 전문가가 신속하게 답변드립니다.
+    </p>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <span class="contact-info-label">주소</span>
+        <span class="contact-info-value">경기도 광주시 중앙로 178</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-info-label">전화</span>
+        <span class="contact-info-value">02-448-0776</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-info-label">이메일</span>
+        <span class="contact-info-value">one@sanlimgongsa.co.kr</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="contact-info-label">시간</span>
+        <span class="contact-info-value">평일 09:00 – 18:00</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <!-- UX-04: form id added for JS targeting -->
+    <form class="contact-form" id="contactForm" novalidate>
+      <!-- UX-04: Success banner — shown after valid submission -->
+      <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+        문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <!-- CONV-06/A11Y-02: for+id connected; A11Y-03: name added -->
+          <label class="form-label" for="field-name">이름</label>
+          <input class="form-input" id="field-name" name="name" type="text" placeholder="홍길동" required autocomplete="name">
+          <span class="form-error-msg" id="err-name">이름을 입력해주세요.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="field-phone">연락처</label>
+          <input class="form-input" id="field-phone" name="phone" type="tel" placeholder="010-0000-0000" required autocomplete="tel">
+          <span class="form-error-msg" id="err-phone">연락처를 입력해주세요.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-email">이메일</label>
+        <input class="form-input" id="field-email" name="email" type="email" placeholder="example@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-service">업무 유형</label>
+        <!-- A11Y-04: placeholder option set to disabled+selected; required added -->
+        <select class="form-select" id="field-service" name="service" required>
+          <option value="" disabled selected>선택해주세요</option>
+          <option value="산림조사">산림조사</option>
+          <option value="복구설계">복구설계</option>
+          <option value="복구감리">복구감리</option>
+          <option value="재선충방제계획">재선충방제계획</option>
+          <option value="재해위험성검토">재해위험성검토</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="field-message">문의 내용</label>
+        <textarea class="form-textarea" id="field-message" name="message" placeholder="문의 내용을 입력해주세요." required></textarea>
+        <span class="form-error-msg" id="err-message">문의 내용을 입력해주세요.</span>
+      </div>
+      <button class="form-submit" id="formSubmit" type="submit">문의 보내기 →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">산림공사</div>
+  <div class="footer-info">
+    경기도 광주시 중앙로 178 | 02-448-0776 | one@sanlimgongsa.co.kr<br>
+    © 2026 산림공사. All rights reserved.
+  </div>
+</footer>
+
+<!-- ── FLOATING WIDGET (F-11) ── -->
+<div class="widget-wrap" id="widgetWrap">
+  <div class="widget-channels hidden" id="widgetChannels">
+    <a href="https://pf.kakao.com/_xoXXXX" target="_blank" rel="noopener noreferrer" class="channel-item">
+      <div class="channel-icon kakao">💬</div>
+      <span class="channel-label">카카오톡 문의</span>
+    </a>
+    <a href="tel:02-448-0776" class="channel-item">
+      <div class="channel-icon phone">📞</div>
+      <span class="channel-label">02-448-0776</span>
+    </a>
+    <a href="mailto:one@sanlimgongsa.co.kr" class="channel-item">
+      <div class="channel-icon email">✉️</div>
+      <span class="channel-label">이메일 문의</span>
+    </a>
+  </div>
+  <button class="widget-btn" id="widgetBtn" aria-label="실시간 문의">
+    <span id="widgetIcon">💬</span>
+    <span class="widget-badge" id="widgetBadge"></span>
+  </button>
+</div>
+
+<script>
+  // ── Floating Widget Toggle ──
+  const btn = document.getElementById('widgetBtn');
+  const btnIcon = document.getElementById('widgetIcon');
+  const channels = document.getElementById('widgetChannels');
+  const widgetWrap = document.getElementById('widgetWrap');
+  let isOpen = false;
+
+  btn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    channels.classList.toggle('hidden', !isOpen);
+    btn.classList.toggle('open', isOpen);
+    // Only swap the icon span — preserves #widgetBadge as a sibling node
+    btnIcon.textContent = isOpen ? '✕' : '💬';
+  });
+
+  // 외부 클릭 시 닫기
+  document.addEventListener('click', (e) => {
+    if (isOpen && !widgetWrap.contains(e.target)) {
+      isOpen = false;
+      channels.classList.add('hidden');
+      btn.classList.remove('open');
+      btnIcon.textContent = '💬';
+    }
+  });
+
+  // ── 운영 시간 배지 ──
+  const badge = document.getElementById('widgetBadge');
+
+  function updateBadge() {
+    const now = new Date();
+    const day = now.getDay(); // 0=일, 6=토
+    const hour = now.getHours();
+    const isWeekday = day >= 1 && day <= 5;
+    const isWorkHour = hour >= 9 && hour < 18;
+
+    if (isWeekday && isWorkHour) {
+      badge.classList.remove('offline');
+      badge.title = '지금 바로 상담 가능합니다';
+    } else {
+      badge.classList.add('offline');
+      badge.title = '운영시간: 평일 09:00~18:00';
+    }
+  }
+
+  updateBadge();
+  const badgeInterval = setInterval(updateBadge, 60000);
+
+  // ── UX-04: Contact Form Validation & Submission Feedback ──
+  (function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const submitBtn = document.getElementById('formSubmit');
+    const successBanner = document.getElementById('formSuccess');
+
+    // Field validation map: fieldId → errorElementId
+    const requiredFields = [
+      { input: 'field-name',    error: 'err-name' },
+      { input: 'field-phone',   error: 'err-phone' },
+      { input: 'field-message', error: 'err-message' },
+    ];
+
+    function clearErrors() {
+      requiredFields.forEach(({ input, error }) => {
+        document.getElementById(input).classList.remove('error');
+        document.getElementById(error).classList.remove('visible');
+      });
+      successBanner.classList.remove('visible');
+    }
+
+    function validateForm() {
+      let valid = true;
+      requiredFields.forEach(({ input, error }) => {
+        const el = document.getElementById(input);
+        const errEl = document.getElementById(error);
+        if (!el.value.trim()) {
+          el.classList.add('error');
+          errEl.classList.add('visible');
+          valid = false;
+        } else {
+          el.classList.remove('error');
+          errEl.classList.remove('visible');
+        }
+      });
+      return valid;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearErrors();
+
+      if (!validateForm()) return;
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = '전송 중...';
+
+      // Simulate async submission (replace with actual fetch if backend available)
+      setTimeout(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '문의 보내기 →';
+        form.reset();
+        successBanner.classList.add('visible');
+        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 1200);
+    });
+
+    // Clear error state on input
+    requiredFields.forEach(({ input }) => {
+      const el = document.getElementById(input);
+      el.addEventListener('input', function () {
+        if (el.value.trim()) {
+          el.classList.remove('error');
+        }
+      });
+    });
+  })();
+
+  // ── Nav 스크롤 쉐도우 ──
+  const navEl = document.querySelector('nav');
+  let rafPending = false;
+  window.addEventListener('scroll', () => {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+      navEl.style.boxShadow =
+        window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+      rafPending = false;
+    });
+  }, { passive: true });
+</script>
+
+<!-- UX-01: Duplicate .talk-btn removed — consolidated into .widget-wrap above -->
+
+</body>
+</html>
